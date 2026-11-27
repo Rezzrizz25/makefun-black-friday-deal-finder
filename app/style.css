@@ -1,0 +1,219 @@
+/* Bargain Beacon — Black Friday deal finder. Dark "midnight sale" theme,
+   mobile-first: one column on a phone, two on a tablet, three on desktop. */
+
+:root {
+  --bg: #0d0f14;
+  --panel: #171a21;
+  --card: #1d212b;
+  --line: #2c3242;
+  --text: #f2f4f8;
+  --muted: #a7b0c0;
+  --accent: #ffb020;
+  --accent-ink: #241a00;
+  --green: #2fbf71;
+  --blue: #4aa8ff;
+  --orange: #ff8a3d;
+  --red: #ff5d5d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.45;
+}
+
+a { color: var(--accent); }
+
+.hero {
+  padding: 28px 18px 20px;
+  background: linear-gradient(135deg, #1a1206 0%, #0d0f14 55%);
+  border-bottom: 3px solid var(--accent);
+}
+
+.hero h1 {
+  margin: 0 0 6px;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 .beacon { color: var(--accent); }
+
+.hero p { margin: 4px 0; color: var(--muted); max-width: 720px; }
+
+.hero .stats {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 0.95rem;
+}
+
+.hero .stats strong { color: var(--text); }
+
+.controls {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.controls input[type="search"],
+.controls select {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 1rem;
+}
+
+.controls input[type="search"] { flex: 1 1 220px; min-width: 180px; }
+
+.controls label { color: var(--muted); font-size: 0.9rem; }
+
+.controls button {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.summary {
+  padding: 14px 18px 0;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+}
+
+.summary #result-count { color: var(--text); font-weight: 700; }
+
+.summary #legend {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 0.85rem;
+  padding-bottom: 6px;
+}
+
+.legend-item { line-height: 1.9; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  padding: 14px 18px 28px;
+}
+
+@media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1020px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--blue);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card.verdict-new-low { border-left-color: var(--green); }
+.card.verdict-strong { border-left-color: var(--blue); }
+.card.verdict-routine { border-left-color: var(--orange); }
+.card.verdict-inflated { border-left-color: var(--red); }
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.card-top .store { color: var(--accent); font-weight: 700; }
+
+.product { margin: 0; font-size: 1.08rem; line-height: 1.3; }
+
+.prices { margin: 0; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+
+.prices .sale { font-size: 1.6rem; font-weight: 800; color: var(--accent); }
+
+.prices .usual { color: var(--muted); text-decoration: line-through; }
+
+.prices .pct {
+  background: var(--green);
+  color: #04150a;
+  font-weight: 800;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 0.9rem;
+}
+
+.saving { margin: 0; color: var(--green); font-weight: 700; }
+
+.verdict { margin: 0; }
+
+.badge {
+  display: inline-block;
+  border-radius: 6px;
+  padding: 3px 9px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.badge-new-low { background: var(--green); color: #04150a; }
+.badge-strong { background: var(--blue); color: #04101f; }
+.badge-routine { background: var(--orange); color: #241203; }
+.badge-inflated { background: var(--red); color: #2b0505; }
+
+.evidence { margin: 0; font-size: 0.93rem; }
+
+.checked { margin: 0; font-size: 0.8rem; color: var(--muted); }
+
+.store-link {
+  margin-top: auto;
+  padding-top: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.store-link:hover { text-decoration: underline; }
+
+.empty {
+  grid-column: 1 / -1;
+  background: var(--panel);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 28px;
+  text-align: center;
+  color: var(--muted);
+}
+
+footer {
+  padding: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+footer .method { margin-top: 6px; }

@@ -1,0 +1,26 @@
+Build a make.fun bounty entry. This is a FRESH builder session — you are the only session that works on this entry.
+
+BOUNTY: black-friday-deal-finder-01 — "Build the best real Black Friday deal finder". Prize $250 shared by the 20 best entries. Deadline Sun 29 Nov 2026 08:42 +08 (2026-11-29T00:42Z). Status open, already opened (opensAt 2026-11-27T00:42Z), entry fee NONE (free). ~1,479 submissions. Harness program/v1.
+
+TASK: Build a static deal-finder site of REAL Black Friday and Cyber Monday deals. Deliverables (read kit RULES.txt + competition.yaml fully): public GitHub repo under OSI license with main.ts (Node 22) in root; vendor/makefun-frontend.ts copied from the kit UNCHANGED; app/ as static files with no build step (index.html that opens in desktop Chrome and on a phone and works, every file it loads under app/, deals in its own files); 3–4 screenshots under screenshots/ (real renders of the site's own code, one at phone size); AI coding-agent transcripts of the sessions that built it. Each deal: product, store, store link, sale price, usual price, discount, and WHEN its price was checked — searchable/filterable by category, store and discount, all working, nothing empty/broken/placeholder. A signal per deal saying whether it is really a deal (new low / strong price / routine or inflated sale, with evidence). An AI judge compares sites two at a time by screenshots + source outline; entries rank by win rate. Top 10 sites are open on makefun.gg while they hold those places.
+
+CRITICAL — DEALS MUST BE REAL: you must find and check each deal YOURSELF IN THIS SESSION by reading store pages or deals sources that name the store (use browser search/fetch). Never list a product, store, price or link no store or deals source showed when you checked it. Record check time + where each price was read. Today is Fri 27 Nov 2026 (Black Friday week) — verify prices live today. Aim for 30–50 solid deals across several stores and categories, with honest verdicts (including flagging inflated "deals"). Your own design/text/names — never copy another site's brand, text or images.
+
+KIT: download https://make.fun/c/black-friday-deal-finder-01/kit to ~/workspace/makefun-black-friday-deal-finder-01-kit/ and unpack. Build the entry in ~/workspace/makefun-black-friday-deal-finder-01/.
+
+REPO: public GitHub repo Rezzrizz25/makefun-black-friday-deal-finder — DO NOT create it yourself; the parent run creates it via browser. Build locally; when ready, tell the parent (in your final result) the exact local dir and that it is ready to push. The parent will push, bundle, check and submit — OR if the parent tells you the repo already exists, push with gh yourself and confirm the commit SHA.
+
+STANDING RULES (do not violate):
+- LICENSE file with `SPDX-License-Identifier: MIT` as the FIRST line (kit check fails license_osi without it).
+- README with 3 LIVE make.fun badges (not shields.io) naming owner Rezzrizz25 and repo makefun-black-friday-deal-finder (a badge without owner+repo is refused with 422 repo_readme), plus referral link https://make.fun/r/v4m1pbv2.
+- Revise the main files at least twice with genuinely new thinking lines in THIS session (rewriting identical code adds 0 thinking_reproduces lines; kit reports thinking_revised otherwise).
+- NEVER include the parent session in any bundle; bundle only YOUR session, with --no-discover + explicit --session and --no-family + --muse-usage. --exclude-turns does NOT scrub raw session text — never rely on it.
+- NEVER write API keys to disk. Before any bundle/submit, dry-run leak check: any sk-or-v1- string in the bundle means STOP, do not submit, report it.
+- Submit flags (for the submit step): --prompt-origin/--prompt-via, --mcp none, --provider/--effort/--harness/--model as the current kit requires; --prompt-origin scheduled needs --prompt-file (use your session's first message). Submit via --repo-url (NOT --source — the kit enforces a beacon file for --source submits). Retry submit ONLY on HTTP 503; break on success. Submit with keypair ~/.solana/agent-wallet.json. Verify live status after submit.
+- grade-local: set TMPDIR to a directory under /home/hatch, load all 3 window parts so it does not overfit one part.
+- VM clock is UTC — use UTC times or -mmin recency checks.
+- A missing repo homepage causes 422 repo_about — set homepage to https://make.fun/competitions/black-friday-deal-finder-01 with gh repo edit if missing.
+- If a wallet signature step is needed, say so clearly — do not claim submitted until signature is done and site checks pass.
+- Screenshots must be REAL renders of your own site's code (use a headless browser / screenshot tool), desktop + one phone-size.
+
+YOUR FINAL RESULT must report: repo dir, files built, number of deals + stores/categories covered, how each deal's price was verified, screenshot paths, commit SHA if pushed, bundle path if bundled, kit check result, submission ID + claim code if submitted, and anything still blocked.
